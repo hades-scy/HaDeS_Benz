@@ -1,0 +1,54 @@
+{% extends "layouts/basicplain.html" %}
+{% block title %}HaDeS Benz{% endblock %}
+{% block content %}
+
+ <section id="pricing">
+        <div class="container">
+            <div class="center">
+                <h2>Test Drive</h2>
+                <p class="lead">Test Drive Bookings list</p>
+            </div><!--/.center-->
+
+            <div class="gap"></div>
+            <div id="pricing-table" class="row">
+                {% for test in wq %}
+                <div class="span12">
+                    <ul class="plan plan3 featured">
+                        <li class="plan-name">
+                            <h1>{{test['car']}}</h1>
+                        </li>
+                        <div class="row bottom-space">
+                            <div class="span7 offset1 center-align">
+              <img src="{{test['img']}}" class="thumbnail product-snap">
+            </div>
+                            <div class="span4" align="left">
+                            <li>&nbsp;</li>
+                            <li>&nbsp; </li>
+                            <li>
+                                <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dl no. :</strong> {{test['dl']}}</h4>
+                            </li>
+                            <li>
+                                <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone number : </strong> {{test['ph']}}</h4>
+                            </li>
+                            <li>
+                                <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email : </strong> {{test['email']}}</h4>
+                            </li>
+                            <li>
+                                <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address : </strong> {{test['address']}}</h4>
+                            </li>
+                            <li>
+                               <h4> <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of booking : </strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{(test['date'])}}</h4>
+                            </li>
+                            <li class="plan-action">
+
+                            </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div><!--/.col-md-3-->
+                {% endfor %}
+            </div>
+        </div>
+    </section><!--/#pricing-->
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "layouts/admin.html" %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+
+ <section id="pricing">
+        <div class="container">
+            <div class="center">
+                <h2><strong>Test Drive</strong></h2>
+                <p class="lead">Test Drive Bookings list</p>
+            </div><!--/.center-->
+
+            <div class="gap"></div>
+            <div id="pricing-table" class="row">
+                <div class="span12">
+                    <ul class="plan plan3 featured">
+                        <li class="plan-name">
+                            <h3>{{test['car']}}</h3>
+                        </li>
+                        <div class="row bottom-space">
+                            <div class="span9 center-align">
+                                <img src="{{test['img']}}" class="thumbnail product-snap">
+                            </div>
+                            <div class="span3">
+                            <li>
+                                <strong>Name : </strong> {{test['name']}}
+                            </li>
+                            <li>
+                                <strong>Dl no. :</strong> {{test['dl']}}
+                            </li>
+                            <li>
+                                <strong>Phone number : </strong> {{test['ph']}}
+                            </li>
+                            <li>
+                                <strong>Email : </strong> {{test['email']}}
+                            </li>
+                            <li>
+                                <strong>Address : </strong> {{test['address']}}
+                            </li>
+                            <li>
+                                <strong>Date of booking : </strong> {{test['date']}}
+                            </li>
+                            <li class="plan-action">
+                                <a href="#" class="btn btn-primary btn-md">Confirm</a>
+                            </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div><!--/.col-md-3-->
+                {% for test in wq %}
+                <div class="span12">
+                    <ul class="plan plan3 featured">
+                        <li class="plan-name">
+                            <h3>{{test['car']}}</h3>
+                        </li>
+                        <div class="row bottom-space">
+                            <div class="span9 center-align">
+              <img src="{{test['img']}}" class="thumbnail product-snap">
+            </div>
+                            <div class="span3">
+                            <li>
+                                <strong>Name : </strong> {{test['name']}}
+                            </li>
+                            <li>
+                                <strong>Dl no. :</strong> {{test['dl']}}
+                            </li>
+                            <li>
+                                <strong>Phone number : </strong> {{test['ph']}}
+                            </li>
+                            <li>
+                                <strong>Email : </strong> {{test['email']}}
+                            </li>
+                            <li>
+                                <strong>Address : </strong> {{test['address']}}
+                            </li>
+                            <li>
+                                <strong>Date of booking : </strong> {{test['date']}}
+                            </li>
+                            <li class="plan-action">
+                                <a href="#" class="btn btn-primary btn-md">Confirm</a>
+                            </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div><!--/.col-md-3-->
+                {% endfor %}
+            </div>
+        </div>
+    </section><!--/#pricing-->
+
+{% endblock %}

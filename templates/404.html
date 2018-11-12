@@ -1,0 +1,10 @@
+{% extends "layouts/head.html" %}
+{% block title %}HaDeS Benz{% endblock %}
+{% block content %}
+    <section id="error" class="container">
+        <h1>{{msg}}</h1>
+        <div></div>
+        <a class="btn btn-success" href="{{url_for('index') }}">GO BACK TO HOMEPAGE</a>
+    </section><!--/#error-->
+
+ {% endblock %}

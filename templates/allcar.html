@@ -1,0 +1,86 @@
+{% extends "layouts/head.html" %}
+{% block title %}Benz Models{% endblock %}
+{% block content %}
+<!-- Start: MAIN CONTENT -->
+    <div class="content">
+      <!-- Start: PRODUCT LIST -->
+        <div class="container">
+          <div class="page-header">
+            <h1><strong> Car</strong></h1>
+          </div>
+          <div class="container">
+            <ul class="thumbnails">
+              <li class="span12">
+                <div class="thumbnail" align="center">
+                      <div class="caption">
+                          <h1><strong>{{test['product_name']}}</strong></h1>
+                      <div>
+                     <p><h2><strong>&nbsp;Ratings : (&nbsp;{{test['product_review']}}&nbsp;/&nbsp;10&nbsp;)</strong></h2> </p>
+                      </div>
+                      <p><h3>Specifications:</h3></p>
+                    <div>
+                        <p><h3>Fuel : <strong>{{test['fuel']}}</strong></h3></p>
+                      </div>
+                      <div>
+                          <p><h3>Shift : <strong>{{test['gear']}} </strong> </h3></p>
+                      </div>
+                      <div>
+                          <p><h3>Mileage : <strong>{{test['mileage']}}  </strong></h3></p>
+                      </div>
+
+                          <p><h3>Class : <strong>{{test['type']}}</strong></h3></p>
+
+
+                          <p><h3>Price : <strong>{{test['product_price']}}</strong></h3></p>
+
+
+                </div>
+                      <div class="widget-footer">
+                    <p align="center">
+                      <a href="{{url_for('product',name = test['product_name']) }}" class="btn btn-primary btn-large">more Specifications</a>&nbsp;
+
+                    </p>
+                </div>
+                </div>
+              </li>
+              {% for test in wq %}
+              <li class="span4">
+                <div class="thumbnail">
+                      <div class="caption">
+                          <h2 align="center" ><strong>{{test['product_name']}}</strong></h2>
+
+                          <p><h3 align="center"><strong>Ratings : (&nbsp;{{test['product_review']}}&nbsp;/&nbsp;10&nbsp;) </strong></h3></p>
+
+                      <p><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifications:</h4></p>
+                    <div>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fuel : <strong>{{test['fuel']}}</strong></p>
+                      </div>
+                      <div>
+                          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shift : <strong>{{test['gear']}}</strong>  </p>
+                      </div>
+                      <div>
+                          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mileage : <strong>{{test['mileage']}} </strong> </p>
+                      </div>
+                      <div>
+                          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class : <strong>{{test['type']}}</strong></p>
+                      </div>
+
+                      <p><strong><h3 align="center">Price : {{test['product_price']}}</h3></strong></p>
+
+
+                </div>
+                      <div class="widget-footer">
+                    <p align="center">
+                      <a href="{{url_for('product',name = test['product_name']) }}" class="btn btn-primary btn-large">more Specifications</a>&nbsp;
+                      </p>
+                </div>
+                </div>
+              </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div>
+      <!-- End: PRODUCT LIST -->
+    </div>
+    <!-- End: MAIN CONTENT -->
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layouts/basic.html" %}
+{% block title %}HaDeS Benz{% endblock %}
+{% block content %}
+    <!-- Start: MAIN CONTENT -->
+    <div class="content">
+      <div class="container">
+        <div class="page-header">
+          <h1>Sign up</h1>
+        </div>
+        <div class="row">
+          <div class="span6 offset3">
+            <h4 class="widget-header"><i class="icon-gift"></i> Be a part of HaDeS Benz</h4>
+            <div class="widget-body">
+              <div class="center-align">
+                <form class="form-horizontal form-signin-signup" method=POST action="{{url_for('signup') }}">
+                  <input type="text" name="username" placeholder="Username" required >
+                  <input type="password" name="password" placeholder="Password" required>
+                  <input type="password" name="password_confirmation" placeholder="Password Confirmation" required>
+                  <div>
+                    <input type="submit" value="Sign up" name="signup" class="btn btn-primary btn-large">
+                  </div>
+                </form>
+                <h4><i class="icon-question-sign"></i> Already have an account?</h4>
+                <a href="{{url_for('index') }}" class="btn btn-large bottom-space">Sign in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: MAIN CONTENT -->
+{% endblock %}

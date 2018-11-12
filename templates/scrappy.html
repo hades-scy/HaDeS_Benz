@@ -1,0 +1,30 @@
+{% extends "layouts/head.html" %}
+{% block title %}HaDeS Benz{% endblock %}
+{% block content %}
+    <!-- Start: MAIN CONTENT -->
+    <div class="content">
+      <div class="container">
+        <div class="page-header">
+          <h1>Contact us</h1>
+        </div>
+        <div class="row-fluid">
+          <!-- Start: CONTACT US FORM -->
+          <div class="span12 offset1">
+            <div class="page-header">
+              <h2>Quick message</h2>
+            </div>
+            <form class="form-horizontal form-send" action="{{url_for('zz') }}">
+              <div class="control-group">
+                <div class="control">
+                  <input type="submit" value="scrap" name="scrap" class="btn btn-primary btn-large" >
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- End: CONTACT US FORM -->
+          <!-- End: OFFICES -->
+        </div>
+      </div>
+    </div>
+    <!-- End: MAIN CONTENT -->
+{% endblock %}

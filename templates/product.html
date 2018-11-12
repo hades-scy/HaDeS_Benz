@@ -1,0 +1,163 @@
+{% extends "layouts/head.html" %}
+{% block title %}{{car['product_name']}}{% endblock %}
+{% block content %}
+    <!-- Start: Main content -->
+    <div class="content">    
+      <div class="container">
+        <!-- Start: Product description -->
+        <article class="article">
+          <div class="row bottom-space">
+            <div class="span12">
+              <div class="page-header">
+                <h1>{{car['product_name']}} <small>{{full['type']}}</small></h1>
+              </div>
+            </div>
+            <div class="span12 center-align">
+              <img src="{{car['img']}}" class="thumbnail product-snap">
+            </div>
+          </div>
+          <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center gap">
+                        <h2>Specifications</h2>
+                        <p> </p>
+                    </div>
+                </div>
+            </div>
+
+        <div class="container">
+      <div class="span12" align="left">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Rating :</strong> &nbsp;&nbsp;({{car['product_review']}} / 10 )  </h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Engine : </strong> &nbsp;&nbsp;{{car['product_engine']}}</h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fuel type : </strong> &nbsp;&nbsp;{{full['fuel']}}</h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Price : </strong> &nbsp;&nbsp;{{car['product_price']}}</h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>EMI : </strong> &nbsp;&nbsp;Starts at &nbsp;&nbsp;₹ {{car['product_emi']}}&nbsp;/&nbsp;month</h3>
+
+
+        <div class="panel-group" id="accordion1">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">
+                    <h2><strong> Overview</strong></h2>
+                </a>
+              </h2>
+            </div>
+            <div id="collapseOne1" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="row">
+
+                {% for i, j in oview.items() %}
+                {% if i != '_id' %}
+                {% if i != 'product_name' %}
+                {% if i != 'time' %}
+                <div class="span4">
+                        <div class="media">
+                        <div class="pull-left">
+                            <i class="icon-windows icon-md"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">{{j}}</h3>
+                            <p>{{i}}</p>
+                        </div>
+                    </div>
+                </div><!--/.col-md-4-->
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {%endfor%}
+            </div></div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo1">
+                    <h2><strong>Mercedes-Benz {{car['product_name']}} variants</strong></h2>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo1" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="row">
+
+                {% for i, j in var.items() %}
+                {% if i != '_id' %}
+                {% if i != 'product_name' %}
+                {% if i != 'time' %}
+                <div class="span6">
+                        <div class="media">
+                        <div class="pull-left">
+                            <i class="icon-paper-plane icon-md"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">{{j}}</h3>
+
+                        </div>
+                    </div>
+                </div><!--/.col-md-4-->
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {%endfor%}
+            </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree1">
+                    <h2><strong> Mercedes Benz {{car['product_name']}} On-road price</strong></h2>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree1" class="panel-collapse collapse">
+              <div class="panel-body">
+                 <div class="row">
+
+                {% for i, j in priceloc.items() %}
+                {% if i != '_id' %}
+                {% if i != 'product_name' %}
+                {% if i != 'time' %}
+                <div class="span3">
+                        <div class="media">
+                        <div class="pull-left">
+                            <i class="icon-paper-plane icon-md"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">₹ {{j}}</h4>
+                            <p><h5>{{i}}</h5></p>
+                        </div>
+                    </div>
+                </div><!--/.col-md-4-->
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {%endfor%}
+            </div>
+              </div>
+            </div>
+          </div>
+        </div><!--/#accordion1-->
+      </div><!--/.col-sm-4-->
+            <div class="row">
+          <div class="span10 offset1 ">
+            <form class="form-horizontal form-signin-signup" method=POST action="{{url_for('book',name=car['product_name'])}}">
+              <h4 class="widget-header">
+                <input type="submit" value="Book a test drive" name="Book a test drive" class="btn btn-primary btn-large">  </h4>
+              <div class="center-align">
+
+                  <div class="clearfix"></div>
+
+              </div></form>
+                </div>
+            </div>
+          </div>
+        </div>
+          </section></article></div></div>
+    <!-- End: Main content -->
+{% endblock %}
+

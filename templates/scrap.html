@@ -1,0 +1,16 @@
+{% extends "layouts/admin.html" %}
+{% block title %}HaDeS Benz{% endblock %}
+{% block content %}
+    <section id="error" class="container">
+        <h1> Get the latest updates on prices and customer ratings from the Online server</h1>
+        <div></div>
+        <a class="btn btn-success" href="{{url_for('scrape') }}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CARS LIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3><h4><strong>Mercedes Benz </strong></h4></a>
+        <a class="btn btn-success" href="{{url_for('caroverview') }}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CAR CLASS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h3><h4><strong>Details</strong></h4></a>
+        <a class="btn btn-success" href="{{url_for('carvariant') }}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VARIANT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3><h4><strong> Model </strong></h4></a>
+        <div><h1>    </h1></div>
+        <a class="btn btn-success" href="{{url_for('carpriceloc') }}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On-Road CITY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3><h4><strong> Price</strong></h4></a>
+        <a class="btn btn-success" href="{{url_for('scrapefull') }}"><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FULL CAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3><h4><strong> Specification </strong></h4></a>
+
+    </section><!--/#error-->
+
+ {% endblock %}

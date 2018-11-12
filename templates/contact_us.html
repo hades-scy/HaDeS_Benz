@@ -1,0 +1,85 @@
+{% extends "layouts/head.html" %}
+{% block title %}Contact Us @HaDeS Benz{% endblock %}
+{% block content %}
+    <!-- Start: MAIN CONTENT -->
+    <div class="content">
+      <div class="container">
+        <div class="page-header">
+          <h1>Contact us</h1>
+        </div>
+        <div class="row-fluid">
+          <!-- Start: CONTACT US FORM -->
+          <div class="span4 offset1">
+            <div class="page-header">
+              <h2>Quick message</h2>
+            </div>
+            <form class="form-horizontal form-send" method=POST action="{{url_for('send') }}">
+              <div class="control-group">
+                <div class="control">
+                  <input type="text" name="inputName" placeholder={{test}}>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="control">
+                  <input type="email" name="inputEmail" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="control">
+                  <textarea name="inputMessage" placeholder="Message" required></textarea>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="control">
+                  <input type="submit" value="send" name="send" class="btn btn-primary btn-large" >
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- End: CONTACT US FORM -->
+          <!-- Start: OFFICES -->
+          <div class="span5 offset1">
+            <div class="page-header">
+              <h2>Offices</h2>
+            </div>
+            <h3>ANOOP KIRAN R</h3>
+            <div>
+              <address class="pull-left">
+                <strong>ANUGRAHA</strong><br>
+                  J.P.NAGAR 8 PHASE, BANGALORE<br>
+                INDIA<br>
+              </address>
+              <div class="pull-right">
+                <div class="bottom-space">
+                  <i class="icon-phone icon-large"></i> +91 8147676473
+                </div>
+                <a href="mailto:contact@bootbusiness.com" class="contact-mail">
+                  <i class="icon-envelope icon-large"></i>
+                </a> yogananda@gmail.com
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <h3>Mohammed Irfan</h3>
+            <div>
+              <address class="pull-left">
+                <strong>.asf</strong><br>
+                Ilyas nagar, Bangalore<br>
+                India<br>
+              </address>
+              <div class="pull-right">
+                <div class="bottom-space">
+                  <i class="icon-phone icon-large"></i> +91 7338971997
+                </div>
+                <a href="mailto:contact@bootbusiness.com" class="contact-mail">
+                  <i class="icon-envelope icon-large"></i>
+                </a> irfanmohammmed@gmail.com
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <!-- End: OFFICES -->
+        </div>
+      </div>
+    </div>
+    <!-- End: MAIN CONTENT -->
+{% endblock %}

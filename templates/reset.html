@@ -1,0 +1,31 @@
+{% extends "layouts/basicplain.html" %}
+{% block title %}HaDeS Benz{% endblock %}
+{% block content %}
+
+    <!-- Start: MAIN CONTENT -->
+    <div class="content">
+      <div class="container">
+        <div class="page-header">
+          <h1>Reset password</h1>
+        </div>
+        <div class="row">
+          <div class="span6 offset3">
+            <h4 class="widget-header"><i class="icon-gift"></i> Update Password </h4>
+            <div class="widget-body">
+              <div class="center-align">
+                <form class="form-horizontal form-signin-signup" method=POST action="{{url_for('resetus') }}">
+                  <input type="password" name="oldpass" placeholder="Old Password">
+                  <input type="password" name="newpass" placeholder="New Password">
+                  <input type="password" name="newpassword_confirmation" placeholder="New Password Confirmation">
+                  <div>
+                    <input type="submit" value="Reset" name="Reset" class="btn btn-primary btn-large">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: MAIN CONTENT -->
+ {% endblock %}

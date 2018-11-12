@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Safe Travels</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+      crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Elsie|Elsie+Swash+Caps" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+    <div id="top">
+
+    </div>
+  </head>
+
+  <body>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark mustard-back">
+      <img class="nav-img" src="/static/images/safetravels-logo.png">
+      <a class="navbar-brand mb-0 h1 elsie" href="#top">SafeTravels</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="ml-auto">
+          <button class="btn btn-outline-info" type="button" data-toggle="modal" data-target="#aboutModal">About</button>
+
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Map wrapper with collapsable menu -->
+    <div class="wrapper container-fluid">
+
+        <div class="row">
+          <nav id="sidebar" class="">
+            <!-- Sidebar map menu -->
+            <div class="sidebar-header salmon-font">
+              <h3>Map Options</h3>
+            </div>
+
+            <hr>
+
+            <!-- Sidebar links, soon to be form -->
+            <button type="button" id="all_crime" class="btn btn-info btn-sm" onclick="toggleHeatmap()">
+              Crime Heat Map
+            </button>
+            <button type="button" id="crime" class="btn btn-info btn-sm">
+              Crime Details
+            </button>
+            <button type="button" id="bikeways" class="btn btn-info btn-sm">
+              Bikeways
+            </button>
+            <button type="button" id="bus_routes" class="btn btn-info btn-sm">
+              Bus Routes
+            </button>
+
+          </nav>
+
+          <div class="col" id="content" style="padding: 0;">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+              Map Menu
+            </button>
+            <button type="button" id="walkscore_button" class="btn btn-info">
+              Get Walkscore
+            </button>
+
+            <div id="map"></div>
+
+            <div id="walkscore_container">
+              <div id='ws-walkscore-tile'></div>
+            </div>
+
+          </div>
+
+        </div>
+
+    </div><!--End wrapper-->
+
+    <!-- Modal Code -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content modalBackground">
+          <div class="modal-header">
+            <img src="/static/images/safetravels-logo.png" height="50px">
+            <h5 class="modal-title" id="exampleModalLabel">Welcome to SafeTravels </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              SafeTravels visualizes local bus and bikeways in Houston as well as local crime data to help you navigate through the city safely. Click the Map Menu button to get started.
+            </p>
+            <p>
+              From here you can visualize Houston crime data as a heat map or as individual markers that, when clicked, provide detailed information for particular crimes. The Map Menu also allows you to visualize bus and bike route information in order determine the safest route.
+            </p>
+            <p>
+              Finally, from the Map, click the "Get WalkScore" button to see the walk, bike, and transit score for your location, in addition to nearby amenities, such as restaurants, entertainment, and groceries.
+            </p>
+            <p>
+              Currently, SafeTravels only supports data for Houston, Texas, but we are working to include more cities soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mustard-back salmon-font">
+      <div class="mr-auto team">
+        <ul>
+          <li>
+            Team:
+          </li>
+          <li>
+            <a href="https://github.com/xanlex" alt="Alex's GitHub">
+              <i class="devicon-github-plain"></i>
+              Alex
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/danhagg" alt="Dan's GitHub">
+              <i class="devicon-github-plain"></i>
+              Dan
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/joshwestbury" alt="Josh's GitHub">
+              <i class="devicon-github-plain"></i>
+              Josh
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/loragriffin" alt="Lora's GitHub">
+              <i class="devicon-github-plain"></i>
+              Lora
+            </a>
+          </li>
+          <li style="position: absolute; right: 0.5rem">
+            &copy; 2017
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!--bootstrap javascripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+      crossorigin="anonymous"></script>
+
+    <!-- scripts -->
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/modal.js"></script>
+    <script src="/static/js/main_data.js"></script>
+    <script src="/static/axios.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0fEoOYqyHqCn0k7w0IhQGjW27eFXhfvc&callback=initMap&libraries=visualization">
+    </script>
+  </body>
+
+</html>

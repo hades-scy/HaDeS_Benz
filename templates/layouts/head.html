@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HaDeS">
+    <meta name="author" content="Your name">
+<title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="http://www.pngmart.com/files/3/Mercedes-Benz-Logo-PNG-File.png" type="/static/image/x-icon">
+    <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap responsive -->
+    <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- Font awesome - iconic font with IE7 support -->
+    <link href="/static/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/css/font-awesome-ie7.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/static/css/animate.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <!-- Bootbusiness theme -->
+    <link href="/static/css/boot-business.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Start: HEADER -->
+     <header>
+      <!-- Start: Navigation wrapper -->
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class=" main_logo">
+              <a href='#' class="logo_li">
+                <span class='span-logo'>
+                    <img src='http://www.carlogos.org/logo/Mercedes-Benz-logo-2011-1920x1080.png' height="75px" width="100px">
+                </span>
+              </a>
+          </div>
+          <div class="container">
+            <a href="{{url_for('index') }}" class="brand brand-bootbus">HaDeS Benz</a>
+            <!-- Below button used for responsive navigation -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-expanded="false">
+            <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Start: Primary navigation -->
+            <div class="nav-collapse collapse">
+              <ul class="nav pull-right">
+                <li><a href="{{url_for('allcar') }}">Car Models</a></li>
+                <li><a href="{{url_for('about') }}">About</a></li>
+                <li><a href="{{url_for('send') }}">Contact Us</a></li>
+                <li><a href="{{url_for('signout') }}"> Log Out</a></li>
+                <li><a href="{{url_for('account') }}">Hello&nbsp; {{ session['username'] }}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: Navigation wrapper -->
+    </header>
+    <!-- End: HEADER -->
+  {% block content %}{% endblock %}
+  <!-- Start: FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="span2">
+            <h4><i class="icon-star icon-white"></i> Vehicles </h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="{{url_for('traditional') }}">Traditional Model </a></li>
+                <li><a href="{{url_for('amg') }}">AMG Model</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="span2">
+            <h4><i class="icon-thumbs-up icon-white"></i>  </h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="{{url_for('about') }}">About </a></li>
+                <li><a href="{{url_for('send') }}">Contact Us </a></li>
+              </ul>
+            </nav>
+          </div>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="container">
+        <p>
+          &copy; Made by Anoop  &  Irfan.
+        </p>
+      </div>
+    </footer>
+    <!-- End: FOOTER -->
+    <script type="/static/text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="/static/text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="/static/text/javascript" src="/static/js/boot-business.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.prettyPhoto.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+  </body>
+</html>

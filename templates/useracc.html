@@ -1,0 +1,63 @@
+{% extends "layouts/basicplain.html" %}
+{% block title %}car{% endblock %}
+{% block content %}
+    <!-- Start: Main content -->
+    <div class="content">    
+      <div class="container">
+        <!-- Start: Product description -->
+        <article class="article">
+          <div class="row bottom-space">
+            <div class="span12">
+              <div class="page-header">
+                <h1>{{un['name']}} <small>{{un['role']}}</small></h1>
+              </div>
+            </div>
+          </div>
+          <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center gap">
+                        <h2>My Account</h2>
+                        <p> </p>
+                    </div>
+                </div>
+            </div>
+
+        <div class="container">
+      <div class="span12" align="left">
+
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Name :</strong> {{un['name']}}  </h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>DL no : </strong> {{un['dl']}}</h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Ph no : </strong> {{un['phno']}}</h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Email : </strong> {{un['email']}}</h3>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Address : </strong> {{un['address']}}</h3>
+
+
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="span8 offset2">
+            <h4 class="widget-header"><i class="icon-gift"></i> Update changes </h4>
+            <div class="widget-body">
+              <div class="center-align">
+                <form class="form-horizontal form-signin-signup" method=POST action="{{url_for('account')}}">
+                  <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name : </p><input type="text" name="bname" placeholder="Name" value={{un['name']}} disabled>
+                  <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DL number : </p><input type="number" name="bdl" placeholder="DL number" value={{un['dl']}} required>
+                  <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone Number : </p><input type="number" name="bph" placeholder="Phone Number" value={{un['phno']}} required>
+                  <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email : </p><input type="email" name="bemail" placeholder="Email"  required value={{un['email']}}>
+                  <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address : </p><input type="text" name="badd" placeholder="Address"  required value={{un['address']}}>
+                  <div class="clearfix"></div>
+                  <input type="submit" value="Update" name="Update" class="btn btn-primary btn-large">
+                </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+          </section></article></div></div>
+
+    <!-- End: Main content -->
+{% endblock %}
+

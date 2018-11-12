@@ -1,0 +1,161 @@
+ /*-- Global -- */
+
+.elsie {
+  font-family: 'Elsie', cursive;
+  font-size: 2em;
+  padding-left: 10px;
+}
+
+.swash {
+  font-family: 'Elsie Swash Caps', cursive;
+}
+
+.salmon-font {
+  color: #f36851;
+  color: rgb(243, 104, 81);
+}
+
+.salmon-back {
+  background-color: #f36851;
+  background-color: rgb(243, 104, 81);
+}
+
+.mustard-back {
+  background-color: #f7c648;
+  background-color: rgb(247, 198, 72);
+}
+
+ /*-- Main -- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: #f36851;
+}
+
+/* -- Nav -- */
+
+.nav-img {
+  height: 50px;
+  padding: 0 5px;
+}
+
+.navbar-text {
+  float: right;
+  text-align: right;
+}
+
+
+/*-- Map --*/
+
+#map {
+  height:calc(100vh - 99px);
+  padding: 0;
+}
+
+/*-- Sidebar --*/
+
+#content {
+  position: relative;
+}
+
+.btn-info {
+  margin: 5px 2px;
+  width: 130px;
+  text-align: center;
+}
+
+#sidebar {
+  text-align: center;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.5s;
+  transition-timing-function: ease;
+  background: linear-gradient(to right, white , #DBDFDF);
+
+}
+
+#sidebar.active {
+  width: 200px;
+  padding: 10px;
+  background: linear-gradient(to right, white , #DBDFDF);
+}
+
+#sidebarCollapse {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  z-index: 100;
+}
+
+/*-- Walkscore --*/
+
+#walkscore_button {
+  position: absolute;
+  top: 130px;
+  left: 10px;
+  z-index: 100;
+}
+
+#walkscore_container {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: height 0.5s;
+  transition-timing-function: ease;
+  background: linear-gradient(to right, white , #DBDFDF);
+}
+
+#walkscore_container.active {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: height 0.5s;
+  transition-timing-function: ease;
+  background: linear-gradient(to right, white , #DBDFDF);
+}
+
+#ws-walkscore-tile {
+  position:relative;
+  text-align:left;
+  }
+
+#ws-walkscore-tile * {
+  float:none;
+  }
+
+/*-- Modal --*/
+
+.modalBackground {
+  background-image: linear-gradient(to bottom, #cbdbdb 0%, #ebf0f0 100%);
+}
+
+/*-- Footer --*/
+footer {
+  height: 25px;
+  padding: 0 20px;
+}
+
+footer li {
+  display: inline;
+  padding: 0 5px;
+}

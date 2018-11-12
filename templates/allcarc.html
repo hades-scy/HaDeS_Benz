@@ -1,0 +1,83 @@
+{% extends "layouts/head.html" %}
+{% block title %}Benz Models{% endblock %}
+{% block content %}
+<!-- Start: MAIN CONTENT -->
+    <div class="content">
+      <!-- Start: PRODUCT LIST -->
+        <div class="container">
+          <div class="page-header">
+            <h2>Car</h2>
+          </div>
+          <div class="row-fluid">
+            <ul class="thumbnails">
+              <li class="span6">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <h3>{{test['product_name']}}</h3>
+                      <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ratings : (&nbsp;{{test['product_review']}}&nbsp;/&nbsp;10&nbsp;) </p>
+                      </div>
+                      <p><h5>Specifications:</h5></p>
+                    <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fuel : {{test['fuel']}}</p>
+                      </div>
+                      <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shift : {{test['gear']}}  </p>
+                      </div>
+                      <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mileage : {{test['mileage']}}  </p>
+                      </div>
+                      <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class : {{test['type']}}</p>
+                      </div>
+
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price : {{test['product_price']}}</p>
+                  </div>
+                <div class="widget-footer">
+                    <p align="center">
+                      <a href="{{url_for('prod',name = 'A Class') }}" class="btn btn-primary">Book a Test Drive now</a>&nbsp;
+                    </p>
+                </div>
+                </div>
+
+              {% for test in wq %}
+
+
+                <div class="thumbnail">
+                  <div class="caption">
+                    <h3>{{test['product_name']}}</h3>
+                      <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ratings : (&nbsp;{{test['product_review']}}&nbsp;/&nbsp;10&nbsp;) </p>
+                      </div>
+                      <p><h5>Specifications:</h5></p>
+                    <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fuel : {{test['fuel']}}</p>
+                      </div>
+                      <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shift : {{test['gear']}}  </p>
+                      </div>
+                      <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mileage : {{test['mileage']}}  </p>
+                      </div>
+                      <div>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class : {{test['type']}}</p>
+                      </div>
+
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price : {{test['product_price']}}</p>
+                  </div>
+                <div class="widget-footer">
+                    <p align="center">
+                      <a href="{{url_for('prod',name = 'A Class') }}" class="btn btn-primary">Book a Test Drive now</a>&nbsp;
+                    </p>
+                </div>
+                </div>
+
+                {% endfor %}
+            </li>
+            </ul>
+          </div>
+        </div>
+      <!-- End: PRODUCT LIST -->
+    </div>
+    <!-- End: MAIN CONTENT -->
+{% endblock %}

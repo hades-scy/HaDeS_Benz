@@ -1,0 +1,40 @@
+{% extends "layouts/admin.html" %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+
+
+
+    <div class="content">
+      <div class="container">
+        <div class="page-header">
+                    <div class="center">
+                        <h2><strong>WHAT OUR CLIENTS SAY</strong></h2>
+                        <p>Feedback</p>
+                    </div>
+                    <div class="gap"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <blockquote>
+								<p><h3>{{comm['message']}}</h3></p>
+                            <small><h4>{{comm['name']}}</h4> <cite title="Source Title"><h6>Mail Id : {{comm['email']}}</h6></cite></small></blockquote>
+							<br/>
+                        </div>
+						{% for comm in io %}
+
+                        <div class="col-md-6">
+                            <blockquote>
+								<p><h3>{{comm['message']}}</h3></p>
+
+								<small><h4>{{comm['name']}}</h4> <cite title="Source Title"><h6>Mail ID : {{comm['email']}}</h6></cite></small>
+                            </blockquote>
+							<br/>
+                        </div>
+						{% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!--/#services-->
+
+{% endblock %}
